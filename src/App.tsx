@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { supabase } from './lib/supabase';
 import { Database, KeyRound, AlertCircle } from 'lucide-react';
+import { QueryHistory } from './components/QueryHistory';
 
 function Dashboard() {
   const [stats, setStats] = useState({
@@ -10,18 +11,27 @@ function Dashboard() {
     queryCount: 0,
     apiKeyCount: 0
   });
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchStats() {
       const [
-        { count: projectCount },
-        { count: queryCount },
-        { count: apiKeyCount }
+        projectsResponse,
+        queriesResponse,
+        apiKeysResponse
       ] = await Promise.all([
         supabase.from('projects').select('*', { count: 'exact' }),
         supabase.from('queries').select('*', { count: 'exact' }),
         supabase.from('api_keys').select('*', { count: 'exact' })
       ]);
+
+      const projectCount = projectsResponse.count;
+      const queryCount = queriesResponse.count;
+      const apiKeyCount = apiKeysResponse.count;
+
+      if (projectsResponse.data?.length) {
+        setSelectedProjectId(projectsResponse.data[0].id);
+      }
 
       setStats({ projectCount, queryCount, apiKeyCount });
     }
@@ -64,6 +74,12 @@ function Dashboard() {
           </div>
         </div>
       </div>
+      
+      {selectedProjectId && (
+        <div className="mt-8">
+          <QueryHistory projectId={selectedProjectId} />
+        </div>
+      )}
     </div>
   );
 }
@@ -110,10 +126,10 @@ function App() {
       <div className="min-h-screen bg-background">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/projects/*" element={<div>Projects</div>} />
-          <Route path="/api-keys" element={<div>API Keys</div>} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/projects" element={<div>Projects Management (Coming Soon)</div>} />
+          <Route path="/api-keys" element={<div>API Keys Management (Coming Soon)</div>} />
+          <Route path="*" element={<Navigate to="/dashboard" />} />
         </Routes>
       </div>
     </BrowserRouter>

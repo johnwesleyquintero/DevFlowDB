@@ -27,24 +27,23 @@
   <rect width="1200" height="630" fill="url(#backgroundGradient)" rx="20" />
   <circle cx="600" cy="315" r="400" fill="url(#glowGradient)" opacity="0.7" />
 
-
-<!-- Database Icon similar to Logo -->
-  <g class="logo-mark" transform="translate(60, 150)" filter="url(#shadow)">
-    <path d="M60,40 C70,26 108,12 156,12 C156,12 156,148 156,148 C156,162 108,176 60,176 C60,176 60,40 60,40 Z" stroke="url(#mainGradient)" fill="none" stroke-width="12" />
-    <path d="M60,40 C60,54 108,68 156,68" stroke="url(#mainGradient)" fill="none" stroke-width="12" />
-    <path d="M60,108 C60,122 108,136 156,136" stroke="url(#mainGradient)" fill="none" stroke-width="12" />
-    <path d="M60,74 C60,88 108,102 156,102" stroke="url(#mainGradient)" fill="none" stroke-width="12" />
-  </g>    
+  <!-- Logo -->
+  <g transform="translate(60, 120) scale(6)">
+    <path fill="url(#mainGradient)" d="M20 5L35 35H5L20 5Z" class="logo-mark" filter="url(#shadow)" />
+    <path fill="none" stroke="#fff" stroke-width="2" d="M25 15l10 15-15-10-10 15" class="dynamic-line">
+      <animate attributeName="stroke-dasharray" values="0, 100; 100, 0" dur="2s" repeatCount="indefinite" />
+    </path>
+  </g>
 
   <!-- Title -->
   <text id="bannerTitle" x="350" y="200" font-family="'Lato', sans-serif" font-size="50" fill="#ffffff" font-weight="600">
-    DevFlowDB
+    SellSmart Design x Docs
     <animate attributeName="fill" values="#ffffff; #4FD1C5; #ffffff" dur="3s" repeatCount="indefinite" />
   </text>
 
   <!-- Description -->
   <text id="bannerDesc" x="350" y="270" font-family="'Lato', sans-serif" font-size="32" fill="#f5f5f5" width="800">
-    The Developer-Centric Database Solution.
+    Sellsmart's frameworks and operations' dochub.
   </text>
 
   <!-- Tags with Hover Animation -->
@@ -58,21 +57,21 @@
   </g>
   <g class="tag" transform="translate(600, 350)">
     <rect x="0" y="0" width="70" height="40" fill="#4FD1C5" rx="10" />
-    <text x="35" y="25" font-family="'Lato', sans-serif" font-size="18" fill="#1a365d" text-anchor="middle">Vite</text>
+    <text x="35" y="25" font-family="'Lato', sans-serif" font-size="18" fill="#1a365d" text-anchor="middle">AI</text>
   </g>
   <g class="tag" transform="translate(690, 350)">
     <rect x="0" y="0" width="120" height="40" fill="#4FD1C5" rx="10" />
-    <text x="60" y="25" font-family="'Lato', sans-serif" font-size="18" fill="#1a365d" text-anchor="middle">Supabase</text>
+    <text x="60" y="25" font-family="'Lato', sans-serif" font-size="18" fill="#1a365d" text-anchor="middle">Analytics</text>
   </g>
 
   <!-- Live URL -->
   <text x="350" y="450" font-family="'Lato', sans-serif" font-size="28" fill="#ffffff">
-    Live: <tspan fill="#4FD1C5">devflowdb.vercel.app</tspan>
+    Live: <tspan fill="#4FD1C5">sellsmart-docs.vercel.app</tspan>
   </text>
 
   <!-- GitHub URL -->
   <text x="350" y="490" font-family="'Lato', sans-serif" font-size="28" fill="#ffffff">
-    GitHub: <tspan fill="#4FD1C5">github.com/johnwesleyquintero/devflowdb</tspan>
+    GitHub: <tspan fill="#4FD1C5">github.com/johnwesleyquintero/sellsmart-dos</tspan>
   </text>
 
   <!-- Styles -->
