@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" class="project-card">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a365d" />
+      <stop offset="100%" stop-color="#0d1a2f" />
+    </linearGradient>
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4FD1C5" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#4FD1C5" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="flow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3399ff" />
+      <stop offset="100%" style="stop-color:#66bb6a" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <rect width="800" height="400" fill="url(#backgroundGradient)" rx="20" />
+  <circle cx="400" cy="200" r="300" fill="url(#glowGradient)" opacity="0.5">
+    <animate attributeName="r" from="290" to="310" dur="3s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Database Icon similar to Logo -->
+  <g transform="translate(60, 100)" filter="url(#shadow)">
+    <!-- Modify the translate values to change the position of the database icon -->
+    <path d="M60,40 C70,26 108,12 156,12 C156,12 156,148 156,148 C156,162 108,176 60,176 C60,176 60,40 60,40 Z" stroke="url(#flow)" fill="none" stroke-width="12" />
+    <path d="M60,40 C60,54 108,68 156,68" stroke="url(#flow)" fill="none" stroke-width="12" />
+    <path d="M60,108 C60,122 108,136 156,136" stroke="url(#flow)" fill="none" stroke-width="12" />
+    <path d="M60,74 C60,88 108,102 156,102" stroke="url(#flow)" fill="none" stroke-width="12" />
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="0 -8" dur="2s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="scale" from="1 1" to="1.05 1.05" dur="2s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  <!-- Title -->
+  <text x="300" y="150" font-family="'Lato', sans-serif" font-size="40" fill="#ffffff" font-weight="600">
+    <!-- Modify the x and y attributes to change the position of the title -->
+    DevFlowDB
+  </text>
+
+  <!-- Description -->
+  <text x="200" y="200" font-family="'Lato', sans-serif" font-size="24" fill="#f5f5f5" width="550">
+    <!-- Modify the x and y attributes to change the position of the description -->
+    A modern database management system.
+  </text>
+
+  <!-- Tags -->
+  <g transform="translate(200, 280)">
+    <!-- Modify the translate values to change the position of the HTML tag -->
+    <rect x="0" y="0" width="120" height="40" fill="#4FD1C5" rx="10" />
+    <text x="60" y="25" font-family="'Lato', sans-serif" font-size="18" fill="#1a365d" text-anchor="middle">Tailwind CSS</text>
+  </g>
+  <g transform="translate(340, 280)">
+    <!-- Modify the translate values to change the position of the sql.js tag -->
+    <rect x="0" y="0" width="100" height="40" fill="#4FD1C5" rx="10" />
+    <text x="50" y="25" font-family="'Lato', sans-serif" font-size="18" fill="#1a365d" text-anchor="middle">Supabase</text>
+  </g>
+  <g transform="translate(460, 280)">
+    <!-- Modify the translate values to change the position of the HTTPvfs tag -->
+    <rect x="0" y="0" width="80" height="40" fill="#4FD1C5" rx="10" />
+    <text x="40" y="25" font-family="'Lato', sans-serif" font-size="18" fill="#1a365d" text-anchor="middle">React</text>
+  </g>
+  <g transform="translate(560, 280)">
+    <!-- Modify the translate values to change the position of the IndexedDB tag -->
+    <rect x="0" y="0" width="120" height="40" fill="#4FD1C5" rx="10" />
+    <text x="60" y="25" font-family="'Lato', sans-serif" font-size="18" fill="#1a365d" text-anchor="middle">Vite</text>
+  </g>
+
+  <!-- Live URL -->
+  <text x="200" y="350" font-family="'Lato', sans-serif" font-size="20" fill="#ffffff">
+    <!-- Modify the x and y attributes to change the position of the live URL -->
+    Live: <tspan fill="#4FD1C5">devflowdb.vercel.app</tspan>
+  </text>
+
+  <!-- GitHub URL -->
+  <text x="200" y="380" font-family="'Lato', sans-serif" font-size="20" fill="#ffffff">
+    <!-- Modify the x and y attributes to change the position of the GitHub URL -->
+    GitHub: <tspan fill="#4FD1C5">github.com/johnwesleyquintero/devflowdb</tspan>
+  </text>
+</svg>
